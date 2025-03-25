@@ -13,7 +13,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'suho0918',
+      password: 'password',
       database: 'todo_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
