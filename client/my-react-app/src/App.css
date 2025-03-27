@@ -1,0 +1,63 @@
+body {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background: linear-gradient(180deg, #87CEFA, #D7F1FA);
+    min-height: 100vh;
+}
+h1 {
+    color: black;
+    text-align: center;
+    transition:0.3s;
+}
+h1:hover {
+    color: aliceblue;
+    cursor: grab;
+}
+
+.input_box {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 15px;
+    border: #5d5d5d;
+    font-size: 16px;
+    color: black;
+    
+}
+.App > div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+}
+ul span {
+    padding: 10px;
+    
+    
+    color: black;
+    
+}
+ul div {
+    background-color: #fff;
+    display:inline-block;
+    
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+button {
+    transition: 0.5s;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+button:hover {
+    background-color: #5d5d5d;
+    border: 1px solid #5d5d5d;
+}

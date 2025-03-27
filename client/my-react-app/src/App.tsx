@@ -67,6 +67,7 @@ const App: React.FC = () => {
       <h1>Todo List</h1>
       <div>
         <input
+          className='input_box'
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
@@ -77,6 +78,7 @@ const App: React.FC = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
+            <div>
             <span
               style={{
                 textDecoration: todo.completed ? 'line-through' : 'none',
@@ -84,10 +86,12 @@ const App: React.FC = () => {
             >
               {todo.title}
             </span>
+            </div>
             <button onClick={() => handleToggleCompleted(todo.id, todo.completed)}>
               {todo.completed ? '취소' : '완료'}
             </button>
             <button onClick={() => handleDeleteTodo(todo.id)}>삭제</button>
+            
           </li>
         ))}
       </ul>
