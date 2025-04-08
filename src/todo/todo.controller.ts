@@ -25,4 +25,9 @@ export class TodoController {
   delete(@Param('id') id: number): Promise<void> {
     return this.todoService.delete(id);
   }
+
+  @Delete()
+  deleteAllTodos() {
+    return this.todoService.deleteAll();
+  }
 }

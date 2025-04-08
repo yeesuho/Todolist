@@ -25,9 +25,16 @@ export const createTodo = async (title: string) => {
 };
 
 // To-Do 업데이트하기
-export const updateTodo = async (id: number, completed: boolean) => {
+export const updateTodo = async (
+  id: number,
+  completed: boolean,
+  title?: string
+) => {
   try {
-    const response = await axios.put(`${API_URL}/${id}`, { completed });
+    const response = await axios.put(`${API_URL}/${id}`, {
+      completed,
+      ...(title !== undefined && { title }) // title이 있을 경우에만 포함
+    });
     return response.data;
   } catch (error) {
     console.error('Error updating todo:', error);
@@ -42,5 +49,14 @@ export const deleteTodo = async (id: number) => {
   } catch (error) {
     console.error('Error deleting todo:', error);
     throw error;
+  }
+};
+// To-Do 전체 삭제하기
+export const deleteAllTodos = async () => {
+  try {
+    await axios.delete(API_URL); 
+  } catch (error) {
+    console.error('Error deleting all todos:', error);
+    throw new Error('Failed to delete all todos');
   }
 };

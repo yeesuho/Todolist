@@ -35,4 +35,8 @@ export class TodoService {
   async delete(id: number): Promise<void> {
     await this.todoRepository.delete(id);
   }
+
+  async deleteAll(): Promise<void> {
+    await this.todoRepository.clear(); // TypeORM 기준
+  }
 }
